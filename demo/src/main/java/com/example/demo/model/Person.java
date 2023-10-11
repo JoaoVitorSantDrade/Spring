@@ -2,6 +2,8 @@ package com.example.demo.model;
 
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Person {
     
     private final UUID id;
@@ -21,7 +23,8 @@ public class Person {
         return name;
     }
 
-    public Person(UUID id ,String Name){
+    public Person(  @JsonProperty("id") UUID id ,
+                    @JsonProperty("name") String Name){
         this.id = id;
         this.name = Name;
     }
