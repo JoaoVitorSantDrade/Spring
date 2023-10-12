@@ -50,7 +50,7 @@ public class PersonController {
         return personService.deletePersonById(id);
     }
 
-    @PutMapping
+    @PutMapping(path = "{id}")
     public int updatePersonById(@PathVariable("id") UUID id, @RequestBody Person person){
         return personService.updatePersonById(id, person);
     }
